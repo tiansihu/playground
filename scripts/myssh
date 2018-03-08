@@ -1,0 +1,49 @@
+#!/usr/bin/env python
+
+import subprocess
+import re
+
+
+server_list = ['tensw-exe10',
+    'tensw-exe11',
+    'tensw-exe13',
+    'tensw-exe01',
+    'tensw-exe02',
+    'tensw-exe03',
+    'tensw-exe04',
+    'tensw-exe05',
+    'tensw-exe06',
+    'tensw-exe07'
+    ] 
+
+def get_server_load(server):
+    out = subprocess.check_output('ssh thu@%s w' % (server), stdin=None, stderr=subprocess.STDOUT, shell=True)
+    match = re.search("load average:.*", out)
+    if not match:
+        print "No match!"
+        return 10000
+
+    loads = match.group(0) 
+
+    match = re.search(r": ([0-9]*\.[0-9]*),", loads)
+    return float(match.group(1))
+
+
+if __name__ == '__main__':
+    min_load = 10000
+    min_load_server = ""
+    for server in server_list:
+        load = get_server_load(server)
+
+        print "%s: %f" % (server, load)
+
+        if load < min_load:
+            min_load = load
+            min_load_server = server
+
+        if min_load < 5.0:
+            break
+
+    print min_load_server
+    subprocess.call(['ssh', '-XY', 'thu@%s' % min_load_server])
+
