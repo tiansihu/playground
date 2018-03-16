@@ -1,0 +1,31 @@
+if has("win32")
+    source $VIMRUNTIME/../_vimrc
+else
+    source /etc/vimrc
+    source /home/thu/script/a.vim
+endif
+
+set ai
+
+syntax on
+
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set nobackup
+set incsearch
+set hlsearch
+
+if $BG_COLOR == "dark"
+    set bg=dark
+endif
+
+set cino=:0
+
+set background=dark
+
+au Bufread,BufNewFile *.tie,*.tpp setf tie
+au Bufread,BufNewFile Makefile set noexpandtab
+
+set clipboard=exclude:.*
+
