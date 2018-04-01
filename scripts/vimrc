@@ -1,10 +1,3 @@
-if has("win32")
-    source $VIMRUNTIME/../_vimrc
-else
-    source /etc/vimrc
-    source /home/thu/script/a.vim
-endif
-
 set ai
 
 syntax on
@@ -22,7 +15,7 @@ endif
 
 set cino=:0
 
-set background=dark
+"set background=dark
 
 au Bufread,BufNewFile *.tie,*.tpp setf tie
 au Bufread,BufNewFile Makefile set noexpandtab
