@@ -2,6 +2,10 @@
 #define __LC_UTIL_H__
 #include <vector>
 #include <iostream>
+#include <list>
+#include <unordered_map>
+#include <algorithm>
+#include <cassert>
 
 using namespace std;
 
