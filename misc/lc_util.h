@@ -4,6 +4,7 @@
 #include <iostream>
 #include <list>
 #include <unordered_map>
+#include <unordered_set>
 #include <algorithm>
 #include <cassert>
 #include <queue>
@@ -37,6 +38,14 @@ void print_list(ListNode *head){
         head = head->next;
     }
     cout << endl;
+}
+
+template <typename T>
+ostream &operator<<(ostream &out, const vector<T> &a) {
+    for (auto &i: a) {
+        out << i << ", "; 
+    }
+    return out;
 }
 
 template <typename T>
