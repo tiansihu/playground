@@ -63,6 +63,15 @@ void print_array_array(const vector<vector<T>> &results) {
     }
 }
 
+template <typename T>
+ostream &operator<<(ostream &out, const vector<vector<T>> &a) {
+    for (auto &n: a) {
+        out << n;
+        out << endl;
+    }
+    return out;
+}
+
 
 #endif
 
