@@ -7,6 +7,7 @@
 #include <unordered_set>
 #include <algorithm>
 #include <cassert>
+#include <stack>
 #include <queue>
 
 using namespace std;
