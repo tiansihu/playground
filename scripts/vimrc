@@ -9,10 +9,6 @@ set nobackup
 set incsearch
 set hlsearch
 
-if $BG_COLOR == "dark"
-    set bg=dark
-endif
-
 set cino=:0
 
 "set background=dark
