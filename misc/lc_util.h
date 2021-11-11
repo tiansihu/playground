@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <list>
+#include <limits>
 #include <unordered_map>
 #include <unordered_set>
 #include <algorithm>
@@ -11,6 +12,53 @@
 #include <queue>
 
 using namespace std;
+
+struct TreeNode {
+    int val;
+    TreeNode *left, *right;
+    TreeNode(int val) {
+        this->val = val;
+        this->left = this->right = NULL;
+    }
+};
+
+static constexpr int NULL_VAL = -1;
+
+/*
+TreeNode *make_tree(const std::vector<int> &vals) {
+    if (vals.empty()) {
+        return nullptr;
+    }
+
+    auto make_tree_node = [&](int val) -> TreeNode * {
+        if (val == NULL_VAL) {
+            return nullptr;
+        }
+
+        return new TreeNode(val);
+    };
+
+    std::list<TreeNode *> queue;
+    auto iter = vals.begin();
+    TreeNode *root = make_tree_node(*iter++);
+    queue.push_back(root);
+
+    while (!queue.empty()) {
+        auto node = queue.front();
+        queue.pop_front();
+        node->left = make_tree_node(*iter++);
+        if (node->left) {
+            queue.push_back(node->left);
+        }
+
+        node->right = make_tree_node(*iter++);
+        if (node->right) {
+            queue.push_back(node->right);
+        }
+    }
+    return root;
+}
+*/
 
 struct ListNode {
     int val;

@@ -11,7 +11,7 @@ set hlsearch
 
 set cino=:0
 
-"set background=dark
+set background=dark
 
 au Bufread,BufNewFile *.tie,*.tpp setf tie
 au Bufread,BufNewFile Makefile set noexpandtab
