@@ -1,0 +1,29 @@
+{
+  "javascript.suggestionActions.enabled": false,
+  "python.jediEnabled": false,
+  "suggest.echodocSupport": true,
+  "list.normalMappings": {
+    "t": "action:tabe",
+    "v": "action:vsplit",
+    "s": "action:split",
+    "q": "do:exit"
+  },
+
+  // Turn on Log
+  // :CocCommand workspace.showOutput
+  // :CocCommand tsserver.openTsServerLog
+
+  // "tsserver.trace.server": "verbose",
+  // "tsserver.log": "verbose",
+  // "tsserver.debugPort": 5859,
+
+  // "solargraph.transport": "stdio",
+  // "solargraph.trace.server": "verbose",
+  // "solargraph.logLevel": "debug",
+  "python.linting.mypyEnabled": true,
+  "python.linting.mypyPath": "~/.pyenv/shims/mypy",
+  "snippets.ultisnips.enable": false,
+
+  // when snippet activated and pumvisible, prefer complete completion.
+  "suggest.preferCompleteThanJumpPlaceholder": true
+}
