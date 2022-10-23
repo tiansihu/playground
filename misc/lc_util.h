@@ -1,25 +1,29 @@
 #ifndef __LC_UTIL_H__
 #define __LC_UTIL_H__
-#include <vector>
-#include <iostream>
-#include <list>
-#include <limits>
-#include <unordered_map>
-#include <unordered_set>
 #include <algorithm>
 #include <cassert>
-#include <stack>
+#include <cmath>
+#include <iostream>
+#include <limits>
+#include <list>
+#include <map>
+#include <memory>
 #include <queue>
+#include <set>
+#include <stack>
+#include <unordered_map>
+#include <unordered_set>
+#include <vector>
 
 using namespace std;
 
 struct TreeNode {
-    int val;
-    TreeNode *left, *right;
-    TreeNode(int val) {
-        this->val = val;
-        this->left = this->right = NULL;
-    }
+  int val;
+  TreeNode *left, *right;
+  TreeNode(int val) {
+    this->val = val;
+    this->left = this->right = NULL;
+  }
 };
 
 static constexpr int NULL_VAL = -1;
@@ -61,66 +65,61 @@ TreeNode *make_tree(const std::vector<int> &vals) {
 */
 
 struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
+  int val;
+  ListNode *next;
+  ListNode(int x) : val(x), next(NULL) {}
 };
 
 ListNode *make_list(const vector<int> &a) {
-    ListNode *head = NULL;
-    ListNode *p = NULL;
-    for (const int &i: a) {
-        ListNode *q = new ListNode(i);
-        if (head == NULL) {
-            head = p = q;
-        } else {
-            p->next = q;
-            p = q;
-        }
+  ListNode *head = NULL;
+  ListNode *p = NULL;
+  for (const int &i : a) {
+    ListNode *q = new ListNode(i);
+    if (head == NULL) {
+      head = p = q;
+    } else {
+      p->next = q;
+      p = q;
     }
-    return head;
+  }
+  return head;
 }
 
-void print_list(ListNode *head){
-    while (head != NULL) {
-        cout << head->val << (head->next == NULL? "": "->");
-        head = head->next;
-    }
-    cout << endl;
+void print_list(ListNode *head) {
+  while (head != NULL) {
+    cout << head->val << (head->next == NULL ? "" : "->");
+    head = head->next;
+  }
+  cout << endl;
 }
 
-template <typename T>
-ostream &operator<<(ostream &out, const vector<T> &a) {
-    for (auto &i: a) {
-        out << i << ", "; 
-    }
-    return out;
+template <typename T> ostream &operator<<(ostream &out, const vector<T> &a) {
+  for (auto &i : a) {
+    out << i << ", ";
+  }
+  return out;
 }
 
-template <typename T>
-void print_array(const vector<T> &result) {
-    for (auto &r: result) {
-        cout << r << ", ";
-    }
-    cout << endl;
+template <typename T> void print_array(const vector<T> &result) {
+  for (auto &r : result) {
+    cout << r << ", ";
+  }
+  cout << endl;
 }
 
-template <typename T>
-void print_array_array(const vector<vector<T>> &results) {
-    for (auto &result: results) {
-        print_array(result);
-    }
+template <typename T> void print_array_array(const vector<vector<T>> &results) {
+  for (auto &result : results) {
+    print_array(result);
+  }
 }
 
 template <typename T>
 ostream &operator<<(ostream &out, const vector<vector<T>> &a) {
-    for (auto &n: a) {
-        out << n;
-        out << endl;
-    }
-    return out;
+  for (auto &n : a) {
+    out << n;
+    out << endl;
+  }
+  return out;
 }
 
-
 #endif
-
