@@ -122,4 +122,9 @@ ostream &operator<<(ostream &out, const vector<vector<T>> &a) {
   return out;
 }
 
+template <typename C, typename R, typename ...Args>
+void run_solution(R (C::*func)(Args...), Args&&... args) {
+    std::cout << std::bind(func, C(), std::forward<Args>(args)...)() << std::endl;
+}
+
 #endif
