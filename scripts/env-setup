@@ -1,0 +1,1 @@
+alias upgrade-all="sudo apt update && sudo apt full-upgrade"
