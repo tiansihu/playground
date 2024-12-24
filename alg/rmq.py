@@ -37,5 +37,5 @@ if __name__ == "__main__":
     for i in range(length):
         for j in range(1, length - i + 1):
             r = rmq.rmq(i, j)
-            print "%d:%d %d" % (i, j, r)
+            print("%d:%d %d" % (i, j, r))
 
