@@ -1,1 +1,7 @@
 alias upgrade-all="sudo apt update && sudo apt full-upgrade"
+
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+PY3_VER=12
+source ~/venv/py3.$PY3_VER/bin/activate
+
